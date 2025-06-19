@@ -5,6 +5,13 @@
 格式基于 [Keep a Changelog](https://keepachangelog.com/zh-CN/1.0.0/)，
 并且本项目遵循 [语义化版本](https://semver.org/lang/zh-CN/) 规范。
 
+## [1.0.4] - 2025-06-19
+
+### 🔧 其他更改
+
+- release v1.0.3，修复 ESM 模块导入问题，优化构建配置，更新示例代码和文档 (e236097)
+
+
 ## [1.0.3] - 2024-12-28
 
 ### 修复
