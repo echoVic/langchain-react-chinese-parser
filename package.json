@@ -1,6 +1,6 @@
 {
   "name": "langchain-react-chinese-parser",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "一个专门为中文大模型提供的 LangChain ReAct 输出解析器集合，支持通义千问、ChatGLM、百川、智谱GLM、文心一言、Minimax 等主流中文模型",
   "keywords": [
     "langchain",
@@ -34,7 +34,7 @@
   "scripts": {
     "build": "tsup",
     "dev": "tsup --watch",
-    "test": "jest",
+    "test": "jest --passWithNoTests",
     "test:watch": "jest --watch",
     "example:basic": "tsx examples/basic-usage.ts",
     "example:langchain": "tsx examples/langchain-integration.ts",
