@@ -4,7 +4,10 @@
  * 展示如何在现有的自定义 Agent 类中集成我们的中文 ReAct 解析器
  */
 
-import { createAutoParser, createChatGLMParser, createQwenParser } from '../src/index.js';
+import {
+  createAutoParser,
+  createChatGLMParser, createQwenParser,
+} from 'langchain-react-chinese-parser';
 
 /**
  * 示例：通义千问 ReAct Agent
@@ -174,16 +177,16 @@ export class UniversalChineseAgent {
 
     // 🔧 根据模型类型选择合适的解析器
     switch (options.modelType) {
-      case 'qwen':
-        this.parser = createQwenParser({ debug: true });
-        break;
-      case 'chatglm':
-        this.parser = createChatGLMParser({ debug: true });
-        break;
-      case 'auto':
-      default:
-        this.parser = createAutoParser({ debug: true });
-        break;
+    case 'qwen':
+      this.parser = createQwenParser({ debug: true });
+      break;
+    case 'chatglm':
+      this.parser = createChatGLMParser({ debug: true });
+      break;
+    case 'auto':
+    default:
+      this.parser = createAutoParser({ debug: true });
+      break;
     }
 
     console.log(`🤖 UniversalChineseAgent 初始化，解析器: ${this.parser.getType()}`);
@@ -296,7 +299,7 @@ export async function demonstrateCustomAgentUsage() {
   // 1. 创建通义千问 Agent
   const qwenAgent = new QwenReActAgent({
     llm: mockLLM,
-    tools: tools,
+    tools,
     debug: true,
     parserType: 'qwen',
   });
@@ -310,7 +313,7 @@ export async function demonstrateCustomAgentUsage() {
   // 2. 创建通用 Agent
   const universalAgent = new UniversalChineseAgent({
     llm: mockLLM,
-    tools: tools,
+    tools,
     modelType: 'auto',
   });
 
@@ -323,7 +326,7 @@ export async function demonstrateCustomAgentUsage() {
   // 3. 工厂方法创建
   const factoryAgent = createChineseAgent({
     llm: mockLLM,
-    tools: tools,
+    tools,
     modelType: 'auto',
     debug: true,
   });

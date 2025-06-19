@@ -4,7 +4,7 @@
  * 展示如何正确使用 Runnable/Chain 组合方式集成中文 ReAct 解析器
  */
 
-import { createAutoParser, createQwenParser } from '../src/index.js';
+import { createAutoParser, createQwenParser } from 'langchain-react-chinese-parser';
 // import { RunnableSequence, RunnablePassthrough } from "@langchain/core/runnables";
 // import { AgentExecutor } from "langchain/agents";
 // import { formatLogToString } from "langchain/agents";

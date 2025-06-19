@@ -25,6 +25,12 @@ pnpm add langchain-react-chinese-parser
 yarn add langchain-react-chinese-parser
 ```
 
+## 📋 系统要求
+
+- Node.js >= 16.0.0
+- 支持 ES 模块 (ESM) 和 CommonJS (CJS)
+- TypeScript >= 4.0 (可选，但推荐)
+
 ## 🎯 问题背景
 
 LangChain 默认的 `ReActSingleInputOutputParser` 只支持英文格式：
@@ -417,6 +423,38 @@ const result = await parser.parse(output);
 // [qwen] 解析输入: 思考: 我需要搜索...
 // [qwen] 找到动作: {action: 'search', actionInput: '天气'}
 // [Universal] 成功使用 qwen_react_output_parser 解析
+```
+
+### 📝 格式要求
+
+每个解析器对格式有特定要求，确保 LLM 输出符合以下格式：
+
+**通义千问格式：**
+```
+思考: [思考过程]
+动作: [工具名称]
+动作输入: [工具参数]
+```
+
+**ChatGLM格式：**
+```
+思考: [思考过程]
+工具: [工具名称]
+工具输入: [工具参数]
+```
+
+**百川格式：**
+```
+思考: [思考过程]
+工具: [工具名称]  
+工具输入: [工具参数]
+```
+
+**文心一言格式：**
+```
+思考: [思考过程]
+调用工具: [工具名称]
+输入: [工具参数]
 ```
 
 ### 常见问题解决

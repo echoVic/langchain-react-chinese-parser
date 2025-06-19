@@ -10,7 +10,7 @@ import {
   createChatGLMParser,
   createQwenParser,
   SUPPORTED_MODELS,
-} from '../src/index.js';
+} from 'langchain-react-chinese-parser';
 
 // LangChain 相关导入（用于集成示例）
 // import { RunnableSequence, RunnablePassthrough } from "@langchain/core/runnables";
@@ -86,10 +86,10 @@ async function demonstrateBasicUsage() {
   const autoParser = createAutoParser({ debug: true });
 
   const mixedOutputs = [
-    `思考: 需要计算\n动作: calculator\n动作输入: 100+200`,
-    `思考：查询数据库\n工具：database\n工具输入：SELECT * FROM users`,
-    `思考: 翻译文本\n调用工具: translate\n输入: hello world`,
-    `思考: 任务完成\n最终答案: 计算结果是300`,
+    '思考: 需要计算\n动作: calculator\n动作输入: 100+200',
+    '思考：查询数据库\n工具：database\n工具输入：SELECT * FROM users',
+    '思考: 翻译文本\n调用工具: translate\n输入: hello world',
+    '思考: 任务完成\n最终答案: 计算结果是300',
   ];
 
   for (let i = 0; i < mixedOutputs.length; i++) {
@@ -115,12 +115,12 @@ async function demonstrateBasicUsage() {
 
   // 6. 错误处理演示
   console.log('6️⃣ 错误处理演示');
-  const invalidOutput = `这是一个无效的输出格式`;
+  const invalidOutput = '这是一个无效的输出格式';
 
   try {
     await autoParser.parse(invalidOutput);
   } catch (error) {
-    console.log('❌ 预期的解析错误:', error.message.substring(0, 100) + '...');
+    console.log('❌ 预期的解析错误:', `${error.message.substring(0, 100)  }...`);
   }
 
   console.log('\n🎉 基础演示完成！');
