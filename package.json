@@ -1,0 +1,78 @@
+{
+  "name": "langchain-react-chinese-parser",
+  "version": "1.0.0",
+  "description": "一个专门为中文大模型提供的 LangChain ReAct 输出解析器集合，支持通义千问、ChatGLM、百川、智谱GLM、文心一言、Minimax 等主流中文模型",
+  "keywords": [
+    "langchain",
+    "react",
+    "chinese",
+    "llm",
+    "qwen",
+    "chatglm",
+    "baichuan",
+    "glm",
+    "ernie",
+    "minimax",
+    "output-parser",
+    "agent"
+  ],
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "CHANGELOG.md"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "example:basic": "tsx examples/basic-usage.ts",
+    "example:langchain": "tsx examples/langchain-integration.ts",
+    "example:custom-agent": "tsx examples/custom-agent-integration.ts",
+    "lint": "eslint src --ext ts",
+    "lint:fix": "eslint src --ext ts --fix",
+    "type-check": "tsc --noEmit",
+    "prepublishOnly": "pnpm build"
+  },
+  "dependencies": {
+    "@langchain/core": "^0.3.0"
+  },
+  "devDependencies": {
+    "@types/jest": "^29.5.0",
+    "@types/node": "^22.15.24",
+    "@typescript-eslint/eslint-plugin": "^8.34.1",
+    "@typescript-eslint/parser": "^8.34.1",
+    "eslint": "^8.57.0",
+    "jest": "^29.5.0",
+    "ts-jest": "^29.1.0",
+    "tsup": "^8.5.0",
+    "tsx": "^4.7.0",
+    "typescript": "^5.8.3"
+  },
+  "peerDependencies": {
+    "@langchain/core": "^0.3.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/your-username/langchain-react-chinese-parser.git"
+  },
+  "author": "Your Name <your.email@example.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/your-username/langchain-react-chinese-parser/issues"
+  },
+  "homepage": "https://github.com/your-username/langchain-react-chinese-parser#readme",
+  "engines": {
+    "node": ">=18"
+  }
+}
