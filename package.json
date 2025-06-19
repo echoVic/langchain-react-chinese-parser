@@ -64,14 +64,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/your-username/langchain-react-chinese-parser.git"
+    "url": "git+https://github.com/echoVic/langchain-react-chinese-parser.git"
   },
-  "author": "Your Name <your.email@example.com>",
+  "author": "echoVic <137844255@qq.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/your-username/langchain-react-chinese-parser/issues"
+    "url": "https://github.com/echoVic/langchain-react-chinese-parser/issues"
   },
-  "homepage": "https://github.com/your-username/langchain-react-chinese-parser#readme",
+  "homepage": "https://github.com/echoVic/langchain-react-chinese-parser#readme",
   "engines": {
     "node": ">=18"
   }
