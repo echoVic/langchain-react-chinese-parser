@@ -42,7 +42,13 @@
     "lint": "eslint src --ext ts",
     "lint:fix": "eslint src --ext ts --fix",
     "type-check": "tsc --noEmit",
-    "prepublishOnly": "pnpm build"
+    "prepublishOnly": "pnpm build",
+    "release": "node scripts/release.js",
+    "release:dry": "node scripts/release.js --dry-run",
+    "release:major": "node scripts/release.js --major",
+    "release:minor": "node scripts/release.js --minor",
+    "release:patch": "node scripts/release.js --patch",
+    "check": "pnpm lint && pnpm type-check"
   },
   "dependencies": {
     "@langchain/core": "^0.3.0"
@@ -52,6 +58,7 @@
     "@types/node": "^22.15.24",
     "@typescript-eslint/eslint-plugin": "^8.34.1",
     "@typescript-eslint/parser": "^8.34.1",
+    "chalk": "^5.4.1",
     "eslint": "^8.57.0",
     "jest": "^29.5.0",
     "ts-jest": "^29.1.0",
@@ -74,5 +81,6 @@
   "homepage": "https://github.com/echoVic/langchain-react-chinese-parser#readme",
   "engines": {
     "node": ">=18"
-  }
+  },
+  "type": "module"
 }
